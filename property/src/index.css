@@ -1,0 +1,719 @@
+@import url("https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Roboto+Slab:wght@100..900&display=swap"); /*home page font*/
+@import url("https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Quicksand:wght@300..700&family=Roboto+Slab:wght@100..900&display=swap"); /*title tex banner*/
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Oswald:wght@200..700&display=swap');/*list icon text*/
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');/*searchcaed font*/
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Quicksand:wght@300..700&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');/* sell and contact page font*/
+* {
+  margin: 0;
+  padding: 0;
+}
+/* General styling for the navbar */
+
+.navbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f9fa;
+  padding: 10px 20px;
+  position: relative;
+}
+
+.logobox {
+  display: flex;
+  align-items: center;
+}
+
+.logotext {
+  display: flex;
+  font-family: "Edu AU VIC WA NT Pre";
+  flex-wrap: nowrap;
+  margin-left: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.naviconbox {
+  display: flex;
+  align-items: center;
+}
+
+.naviconbox ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.naviconbox ul li {
+  margin: 0 10px;
+}
+
+.navpages {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.navpages:hover {
+  color: #007bff;
+}
+
+.ham-menu {
+  display: none; /* Hidden on larger screens */
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 5px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  height: 450px;
+  position: relative;
+}
+.modal-content2{
+  background-color: white;
+  padding: 5px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  height: 550px;
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+.navbtn{
+  border-radius: 8px;
+  padding: 3px;
+  font-size: small;
+}
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .naviconbox ul {
+    display: none; /* Hide menu by default */
+    flex-direction: column;
+    column-gap: 5px;
+    background-color: #f8f9fa;
+    position: absolute;
+    top: 70px;
+    right: 1px;
+    border: 1px solid #ddd;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    z-index: 10;
+  }
+
+  .naviconbox ul.show {
+    display: flex; /* Show menu when 'show' class is added */
+    text-align: left;
+    border: 2px solid black;
+    margin: 0;
+    padding: 0;
+  }
+
+  .naviconbox ul li {
+    margin: 0 10px;
+    padding: 5px;
+    border-bottom: 2px solid black;
+  }
+  .naviconbox ul li:last-child {
+    border: none;
+  }
+
+  .ham-menu {
+    display: block; /* Show hamburger icon */
+  }
+}
+/* login and signup*/
+.formbox{
+  margin: auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  padding: 5px;
+  border: 2px solid black;
+  border-radius: 15px;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  justify-content: space-between;
+}
+.flbox{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.fubox{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.loginft{
+  font-size: 30px;
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+  
+}
+
+.formbox2{
+  margin: auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  padding: 5px;
+  border: 2px solid black;
+  border-radius: 15px;
+  width: 300px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  justify-content: space-between;
+}
+.logincbtn{
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+}
+.lbt{
+  height: 25px;
+}
+/* banner css */
+.bannerbg {
+  position: absolute; /* Positions the background absolutely within the container */
+  width: 100vw; /* Ensures it spans the full viewport width */
+  height: 100vh; /* Ensures it spans the full viewport height */
+  z-index: -1; /* Moves it behind other elements */
+  opacity: 0.3; /* Sets transparency for the background */
+  background-image: url("../public/124918.jpg"); /* Replace with your image path */
+  background-size: cover; /* Ensures the image covers the entire container */
+  background-position: center; /* Centers the image */
+  overflow: hidden; /* Ensures no content overflows */
+}
+
+.bannertexthead {
+  font-family: "Quicksand", sans-serif;
+  text-align: center;
+  font-size: larger;
+}
+
+.bannerbox {
+  margin: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 5px;
+  /* margin-left: 60; */
+}
+.bannertext {
+  margin: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-content: start;
+  font-size: 18px;
+  font-family: "Roboto Slab", serif;
+  border: 2px solid black;
+  border-radius: 15px;
+  color: whitesmoke;
+  background: #000;
+}
+.homeimgs {
+  height: 400px;
+  width: 600px;
+}
+
+/* searchbox aera */
+.Searchead{
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  font-weight: 400;
+}
+.Searchicon{
+  margin-top: 3px;
+  align-items: center;
+}
+.searchboxarea {
+  margin: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 0px;
+}
+.searchbox {
+  margin: 0px;
+  margin: auto;
+  padding: 10px;
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  background: #f8f9fa;
+  opacity: 0.9;
+}
+
+.searchbar {
+  width: 450px;
+}
+.searchsection1 {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 12.8px;
+  margin-top: 10px;
+  gap: 10px;
+ 
+}
+input section select {
+  border-radius: 3px;
+  width: 50px;
+}
+.searchsection2 {
+  margin: 10px;
+  display: flex;  
+  gap: 40px;
+}
+.searchbtn{
+  background: #000;
+  color: white;
+  width: 90px;
+  margin: auto;
+}
+
+@media(max-width: 800px) {
+  .searchsection2 {
+    flex-wrap: wrap;
+    gap: 20px;
+  } 
+  .searchbox{
+    width: 400px;
+  }
+  .searchsection1{
+    gap: 10px;
+  }
+}
+.pricerange {
+  display: flex;
+}
+
+/*new listed property box*/
+
+.proptext{
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  background-color: white;
+
+}
+.propcard {
+  display: flex;
+  justify-content: center;
+}
+.property-list {
+  margin: 20px;
+  padding: 20px;
+  overflow-x: auto; 
+  overflow-y: hidden; 
+  width: 1200px; 
+  height: auto;
+  display: flex;
+  gap: 40px; 
+  border: 2px solid black;
+  scrollbar-width: thin; 
+  scrollbar-color: #ccc transparent; 
+  scrollbar-width: none;
+}
+
+.property-card {
+  background-color: #f8f9fa;
+  width: 250px; 
+  padding: 10px;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0; 
+}
+
+.propbtnbox{
+  text-align: center;
+}
+.propbutton{
+  background: #000;
+  color: white;
+  width: 70px;
+  padding: 3px;
+}
+.propimg{
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  height: 250px;
+}
+
+.propspec {
+  font-size: 12px;
+  font-family: Courier, monospace;
+}
+.propbutton {
+  text-align: center;
+}
+
+
+
+/* company info*/
+.infohead{
+  text-align: center;
+  margin: 20px;
+  font-family: "Oswald", sans-serif;
+  background-color: white;
+  font-size: 24px;
+  font-weight: 700;
+
+}
+.infoicontext {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid black;
+  background: #f8f9fa;
+}
+.infoicon {
+  height: 60px;
+  width: 60px;
+}
+.insideinfobox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+/*buy page css*/
+.search-pro-list-box{
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 3px solid black;
+  width: 600px;
+}
+.promaincon{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.property-container{
+  display: flex;
+  width: 600px;
+  justify-content:space-between;
+}
+.spi{
+  margin: 10px;
+  display: flex;
+  gap: 10px;
+  
+}
+.pi1{
+  height: 200px;
+  width: 280px;
+  border: 2px solid black;
+  padding: 2px;
+  visibility: visible;
+}
+.pi2{
+  height: 120px;
+  width: 140px;
+}
+.spd{
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  gap: 10px;
+}
+.plbtn{
+  margin: auto;
+  height: 20px;
+  width: 70px;
+  background: #000;
+  color: white;
+}
+.searchboxfooter{
+  margin: auto;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.proplisthead{
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 5px;
+  font-weight: 500;
+  font-size: large;
+  width: 800px;
+  border-bottom:2px solid #000;
+}
+.propnf{
+  text-align: center;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 3px;
+  font-weight: 500;
+  font-size: large;
+  
+}
+.ram{
+  margin: 20px;
+  padding: 20px;
+  display: flex;
+  overflow-x: auto; 
+  overflow-y: hidden; 
+  width: 1200px; 
+  height: auto;
+  display: flex;
+  gap: 40px; 
+  border: 2px solid black;
+  scrollbar-width: thin; 
+  scrollbar-color: #ccc transparent; 
+  scrollbar-width: none;
+}
+  
+  
+
+
+@media(max-width: 750px) {
+  .search-pro-list-box{
+    width: 300px;
+    height: 420px;
+    flex-wrap: wrap;
+  }
+  .property-container{
+    width: 300px;
+    height: 400px;
+    flex-wrap: wrap;
+  }
+
+}
+/* detrailed view of property*/
+.visitdetailedbox{
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 1200px;
+  height: 500px;
+  padding: auto;
+  display: flex;
+  border: 2px solid black;
+}
+.vib{
+  margin: 30px;
+  padding: 20px;
+  border: 2px solid black;
+  display: flex;
+  gap: 20px;
+}
+.viball{
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.vib1{
+margin: auto;
+width: 400px;
+height: 300px;
+border: 1px solid black;
+
+}
+.vibsmall{
+  border: 1px solid black;
+  width: 100px;
+  height: 100px;
+}
+.vpd{
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.searchcardtext{
+  font-size:large;
+}
+
+/*sell property*/
+.sellbox{
+  margin: auto;
+  margin-top: 30px;   
+  margin-bottom: 30px;
+  padding: 30px;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  width: 500px;
+  height: 650px;
+  border-radius: 15px;
+}
+.sellspecbox{
+  display: flex;
+  flex-direction: column;
+}
+.sellsubbtn{
+margin: auto;
+}
+.sellmainhead{
+  font-size: 30px;
+  text-align: center;
+  margin: 10px;
+}
+
+
+
+
+/* Footer css */
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  background: #f8f9fa;
+  box-shadow: 1px 1px;
+}
+.contactinfo {
+  margin: 5px;
+  display: flex;
+  justify-content: space-around;
+}
+.contactbox {
+  margin: 5px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 5px;
+}
+.socialbox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin: 5px;
+}
+.socialicon {
+  height: 40px;
+  width: 40px;
+}
+
+.contactbtnbox {
+  text-align: center;
+}
+.contactbtn {
+  margin: 5px;
+  width: 80px;
+  background: #000;
+  color: white;
+}
+
+.socialicon:hover {
+  scale: 1.2;
+}
+.footerlastlines {
+  display: flex;
+  gap: 20px;
+}
+
+/* contact from css*/
+.contheadtext{
+  text-align: center;
+  font-size: 20px;
+  margin-top: 10px;
+}
+.contactform{
+  margin: 40px;
+}
+.contactbox2{
+  margin: auto;
+  padding: 10px;
+  width: 350px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  border: 2px solid black;
+  border-radius: 6px;
+} 
+.coustomername{
+  display: flex;
+  flex-direction: column;
+}
+.coustomeremail{
+  display: flex;
+  flex-direction: column;
+}
+.continputbox{
+  width: 250px;
+  border-radius: 5px;
+  padding: 3px;
+}
+.coustomerquery{
+  display: flex;
+  flex-direction: column;
+}
+.feedbackcont{
+  border-radius: 5px;
+  padding: 3px;
+}
+.contactsubmit{
+  text-align: center;
+}
+.contsubbtn{
+  border-radius: 5px;
+  padding: 3px;
+}
