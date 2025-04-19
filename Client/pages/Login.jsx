@@ -4,7 +4,7 @@ import { useState } from "react";
 const Login = ({ onSwitchToLogin }) => {
     const [loginform, setLoginForm] = useState({
         loginusername: "",
-        loginPassword: "",
+        password: "",
     });
 
     const handleInputChange = (e) => {
@@ -17,28 +17,29 @@ const Login = ({ onSwitchToLogin }) => {
 
     const handleClick = async (e) => {
         e.preventDefault();
+        console.log("Login button clicked");
+        console.log("Form data:", loginform);
+      
         try {
-            const result = await fetch('http://localhost:5000/register', {
-                method: 'POST',
-                body: JSON.stringify(loginform),
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            });
-    
-            const response = await result.json();
-    
-            // Check if the response contains the expected data
-            if (response.receivedData) {
-                console.log("Username:", response.receivedData.loginusername);
-                console.log("Password:", response.receivedData.loginPassword);
-            } else {
-                console.error("Unexpected response structure:", response);
-            }
+          const result = await fetch('http://localhost:5000/login', {
+            method: 'POST',
+            body: JSON.stringify(loginform),
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          });
+      
+          const response = await result.json();
+      
+          if (response.savedData) {
+            console.log("Saved user:", response.savedData);
+          } else {
+            console.error("Unexpected response:", response);
+          }
         } catch (error) {
-            console.error('Error during login:', error);
+          console.error('Error during login:', error.message);
         }
-    };
+      };
     
     
 
@@ -62,13 +63,13 @@ const Login = ({ onSwitchToLogin }) => {
                         <span className="loginformtext">Password:</span>
                         <input
                             type="password"
-                            value={loginform.loginPassword}
-                            name="loginPassword"
+                            value={loginform.password}
+                            name="password"
                             onChange={handleInputChange}
                         />
                     </div>
                     <div className="flgbox">
-                        <button onClick={handleClick}>Login</button>
+                        <button type="button" onClick={handleClick}>Login</button>
                     </div>
                     <div className="fsbtn">
                         <span
